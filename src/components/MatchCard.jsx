@@ -1,10 +1,34 @@
 import { Box, Card, CardContent, Typography, Avatar, Chip, useTheme } from '@mui/material';
 import { Link } from 'react-router-dom';
-import StadiumIcon from '@mui/icons-material/Stadium';
-import TvIcon from '@mui/icons-material/Tv';
+import { useTheme as useMuiTheme } from '@mui/material/styles';
+
+// إضافة الأيقونات المخصصة بأسماء مختلفة
+const CustomStadiumIcon = ({ color }) => (
+  <svg 
+    xmlns="http://www.w3.org/2000/svg" 
+    viewBox="0 0 526.47 367.66" 
+    width="16" 
+    height="16" 
+    fill={color}
+  >
+    <path d="M473.62 0H275.75v91.71c45.04 5.99 79.79 44.55 79.79 91.23s-34.75 85.24-79.79 91.23v93.49h197.87c29.19 0 52.85-23.66 52.85-52.85v-24.57h-59.11c-25.66 0-46.47-20.8-46.47-46.47V123.9c0-25.66 20.8-46.47 46.47-46.47h59.11V52.86c0-29.19-23.66-52.85-52.85-52.85ZM446.81 131.55V236.1c0 15.02 12.17 27.19 27.19 27.19h52.47V104.36H474c-15.02 0-27.19 12.17-27.19 27.19ZM52.85 0h197.87v91.71c-45.04 5.99-79.79 44.55-79.79 91.23s34.75 85.24 79.79 91.23v93.49H52.85C23.66 367.66 0 344 0 314.81v-24.57h59.11c25.66 0 46.47-20.8 46.47-46.47V123.9c0-25.66-20.8-46.47-46.47-46.47H0V52.86C0 23.66 23.66 0 52.85 0ZM79.66 131.55V236.1c0 15.02-12.17 27.19-27.19 27.19H0V104.36h52.47c15.02 0 27.19 12.17 27.19 27.19ZM275.74 119.15v129.36c30.7-5.54 54-32.38 54-64.68s-23.3-59.14-54-64.68ZM250.72 119.15v129.36c-30.7-5.54-54-32.38-54-64.68s23.3-59.14 54-64.68" />
+  </svg>
+);
+
+const CustomTvIcon = ({ color }) => (
+  <svg 
+    xmlns="http://www.w3.org/2000/svg" 
+    viewBox="0 0 640 512" 
+    width="14" 
+    height="14" 
+    fill={color}
+  >
+    <path d="M64 64l0 288 512 0 0-288L64 64zM0 64C0 28.7 28.7 0 64 0L576 0c35.3 0 64 28.7 64 64l0 288c0 35.3-28.7 64-64 64L64 416c-35.3 0-64-28.7-64-64L0 64zM128 448l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-384 0c-17.7 0-32-14.3-32-32s14.3-32 32-32z"/>
+  </svg>
+);
 
 function MatchCard({ match, league }) {
-  const theme = useTheme();
+  const theme = useMuiTheme();
 
   // تحديد حالة المباراة بشكل دقيق
   const matchStatus = {
@@ -238,7 +262,7 @@ function MatchCard({ match, league }) {
         >
           {match.venue && (
             <Box display="flex" alignItems="center" gap={0.5}>
-              <StadiumIcon color={theme.palette.text.secondary} />
+              <CustomStadiumIcon color={theme.palette.text.secondary} />
               <Typography variant="caption" color="text.secondary">
                 {match.venue}
               </Typography>
@@ -246,7 +270,7 @@ function MatchCard({ match, league }) {
           )}
           {match.channel && (
             <Box display="flex" alignItems="center" gap={0.5}>
-              <TvIcon color={theme.palette.text.secondary} />
+              <CustomTvIcon color={theme.palette.text.secondary} />
               <Typography variant="caption" color="text.secondary">
                 {match.channel}
               </Typography>

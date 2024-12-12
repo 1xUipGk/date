@@ -46,7 +46,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
-// إضافة الأيقونات المخصصة في بداية الملف
+// إضافة أيقونة الملعب المخصصة
 const StadiumIcon = ({ color }) => (
   <svg 
     xmlns="http://www.w3.org/2000/svg" 
@@ -59,6 +59,7 @@ const StadiumIcon = ({ color }) => (
   </svg>
 );
 
+// إضافة أيقونة التلفاز المخصصة
 const TvIcon = ({ color }) => (
   <svg 
     xmlns="http://www.w3.org/2000/svg" 
@@ -227,7 +228,7 @@ function MatchesList({ showLiveOnly, setShowLiveOnly }) {
     league.name.includes(searchQuery)
   );
 
-  // دالة لترتيب المبا��يات داخل كل دوري
+  // دالة لترتيب المباريات داخل كل دوري
   const sortMatches = (matches) => {
     const sortedMatches = {};
     
@@ -297,7 +298,7 @@ function MatchesList({ showLiveOnly, setShowLiveOnly }) {
     
     if (date.isSame(today, 'day')) return 'مباريات اليوم';
     if (date.isSame(today.clone().add(1, 'day'), 'day')) return 'مباريات الغد';
-    if (date.isSame(today.clone().subtract(1, 'day'), 'day')) return 'مباريات الأمس';
+    if (date.isSame(today.clone().subtract(1, 'day'), 'day')) return 'مباريات ��لأمس';
     return `مباريات ${date.format('DD/MM/YYYY')}`;
   };
 
@@ -974,9 +975,6 @@ function MatchesList({ showLiveOnly, setShowLiveOnly }) {
                           borderRadius: 2,
                           mb: 1,
                           justifyContent: 'right',
-                          display: 'flex',
-                          alignItems: 'center',
-                          gap: 1,
                           '&.Mui-selected': {
                             bgcolor: theme => theme.palette.mode === 'dark' ? 'rgba(17, 82, 147, 0.3)' : 'rgba(17, 82, 147, 0.08)',
                             '&:hover': {
@@ -988,10 +986,6 @@ function MatchesList({ showLiveOnly, setShowLiveOnly }) {
                           }
                         }}
                       >
-                        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                          <StadiumIcon color={theme => theme.palette.mode === 'dark' ? 'rgba(255, 255, 255, 0.7)' : 'rgba(0, 0, 0, 0.7)'} />
-                          <TvIcon color={theme => theme.palette.mode === 'dark' ? 'rgba(255, 255, 255, 0.7)' : 'rgba(0, 0, 0, 0.7)'} />
-                        </Box>
                         {league.name}
                       </MenuItem>
                     ))

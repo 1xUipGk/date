@@ -1,10 +1,12 @@
 {
-  "name": "date",
+  "name": "matches-today",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "proxy": "node src/proxy/server.cjs",
+    "start": "concurrently \"npm run proxy\" \"npm run dev\"",
     "build": "vite build",
     "preview": "vite preview"
   },

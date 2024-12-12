@@ -24,10 +24,5 @@ export default defineConfig({
     hmr: {
       overlay: true
     }
-  },
-  base: '/',
-  build: {
-    outDir: 'dist',
-    sourcemap: true
   }
 })
