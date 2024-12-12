@@ -1,0 +1,305 @@
+:root {
+  font-family: 'Tajawal', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+body {
+  margin: 0;
+  direction: rtl;
+}
+
+* {
+  box-sizing: border-box;
+} 
+
+@keyframes moveBorder {
+  0% {
+    right: 0%;
+  }
+  50% {
+    right: 60%;
+  }
+  100% {
+    right: 0%;
+  }
+}
+
+.live-indicator {
+  display: block;
+  height: 2px;
+  background-color: #4BA65A;
+  position: absolute;
+  bottom: -4px;
+  width: 40%;
+  border-radius: 10px;
+  animation: moveBorder 1s infinite;
+  right: 0;
+} 
+
+/* تنسيقات التقويم */
+.customCalendar {
+  width: 100%;
+  border: none;
+  background: transparent;
+  font-family: 'Gotham Arabic', sans-serif;
+}
+
+.react-calendar__navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1em;
+}
+
+.react-calendar__navigation button {
+  min-width: 44px;
+  background: none;
+  font-size: 16px;
+  padding: 8px;
+  border-radius: 8px;
+  transition: background-color 0.2s;
+}
+
+.react-calendar__navigation button:hover {
+  background-color: rgba(75, 166, 90, 0.1);
+}
+
+.react-calendar__month-view__weekdays {
+  text-align: center;
+  font-weight: bold;
+  font-size: 0.75em;
+  margin-bottom: 0.5em;
+}
+
+.react-calendar__month-view__weekdays abbr {
+  text-decoration: none;
+  color: #666666;
+  font-weight: 500;
+}
+
+.react-calendar__month-view__days {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.react-calendar__tile {
+  background: none;
+  border: none;
+  padding: 8px;
+  text-align: center;
+  line-height: 1;
+  font-size: 14px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+/* اليوم الحالي - مع حدود فقط */
+.react-calendar__tile--now {
+  background-color: transparent !important;
+  color: rgb(17, 82, 147) !important;
+  border: 2px solid rgb(17, 82, 147) !important;
+}
+
+/* اليوم المحدد - مع خلفية */
+.react-calendar__tile--active {
+  background-color: rgb(17, 82, 147) !important;
+  color: white !important;
+  border: none !important;
+}
+
+/* اليوم المحدد عندما يكون هو اليوم الحالي */
+.react-calendar__tile--active.react-calendar__tile--now {
+  background-color: rgb(17, 82, 147) !important;
+  color: white !important;
+  border: none !important;
+}
+
+/* أيام نهاية الأسبوع */
+.react-calendar__month-view__days__day--weekend {
+  color: #d10000;
+}
+
+/* أيام الشهور المجاورة */
+.react-calendar__month-view__days__day--neighboringMonth {
+  color: #757575;
+  opacity: 0.5;
+}
+
+/* تأثير التحويم */
+.react-calendar__tile:enabled:hover {
+  background-color: rgba(17, 82, 147, 0.1);
+}
+
+/* تأثير التحويم على اليوم المحدد */
+.react-calendar__tile--active:hover {
+  opacity: 0.9;
+  background-color: rgba(17, 82, 147, 0.9) !important;
+}
+
+.selected-date {
+  display: none;
+}
+
+.react-calendar__tile:disabled {
+  background-color: transparent;
+  color: var(--text-disabled);
+}
+
+/* تنسيق شريط السحب */
+.touchbar {
+  width: 40px;
+  height: 4px;
+  background-color: var(--divider);
+  border-radius: 2px;
+  margin: 0 auto;
+}
+
+.bng-flex {
+  display: flex;
+}
+
+.bng-justify-center {
+  justify-content: center;
+}
+
+.bng-w-full {
+  width: 100%;
+}
+
+.bng-font-Gotham-Arabic {
+  font-family: 'Gotham Arabic', sans-serif;
+} 
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+} 
+
+/* تنسيقات نافذة الفلتر */
+.touchbar {
+  width: 40px;
+  height: 4px;
+  background-color: #E6E6E6;
+  border-radius: 2px;
+  margin: 0 auto;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* تنسيقات حقل البحث */
+.bng-w-full {
+  width: 100%;
+}
+
+.bng-block {
+  display: block;
+}
+
+.bng-my-2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.bng-bg-transparent {
+  background-color: transparent;
+}
+
+.bng-outline-0 {
+  outline: 0;
+}
+
+.bng-font-Gotham-Arabic {
+  font-family: 'Gotham Arabic', sans-serif;
+}
+
+.bng-font-medium {
+  font-weight: 500;
+}
+
+.bng-flex-1 {
+  flex: 1 1 0%;
+}
+
+.bng-p-0 {
+  padding: 0;
+}
+
+.bng-border-0 {
+  border: 0;
+}
+
+.bng-shadow-none {
+  box-shadow: none;
+}
+
+.placeholder\:bng-text-\[\#A6A6A6\]::placeholder {
+  color: #A6A6A6;
+}
+
+.bng-text-\[12px\] {
+  font-size: 12px;
+}
+
+/* تأثير Ripple للأزرار */
+.react-calendar__tile .MuiTouchRipple-root {
+  display: block;
+} 
+
+/* تأكيد ظهور اليوم المحدد */
+.react-calendar__tile--active.react-calendar__tile--now {
+  background-color: var(--primary-main) !important;
+  color: var(--primary-contrast-text) !important;
+  border: none !important;
+}
+
+/* تحسين تأثير التحويم على اليوم المحدد */
+.react-calendar__tile--active:hover {
+  opacity: 0.9;
+}
+
+/* تنسيقات حقل البحث */
+.search-input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: 'Gotham Arabic', sans-serif;
+  font-size: 14px;
+  padding: 0;
+}
+
+.search-input::placeholder {
+  color: var(--text-secondary);
+  opacity: 0.7;
+}
+
+/* تنسيق شريط السحب */
+.touchbar {
+  width: 40px;
+  height: 4px;
+  border-radius: 2px;
+  margin: 0 auto;
+  transition: background-color 0.2s;
+}
+
+/* إخفاء scrollbar */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
